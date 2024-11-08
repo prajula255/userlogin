@@ -13,7 +13,7 @@ export default function App() {
     <React.Fragment>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/a" element={<RegistrationPage />} />
+        <Route path="/register" element={<RegistrationPage />} />
       </Routes>
     </React.Fragment>
   )
