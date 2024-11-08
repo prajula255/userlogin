@@ -3,7 +3,7 @@ import './App.css';
 import Username from './components/Username';
 import Password from './components/Password';
 import Button from './components/Button';
-import LoginPage from './components/pages/login';
+import LoginPage from './pages/login/login';
 import RegistrationPage from './components/pages/reg/reg';
 import React from 'react';
 import {Route,Routes} from "react-router-dom";
