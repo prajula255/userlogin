@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TextInput from "../../components/text-input";
 import Button from "../../components/Button";
 
@@ -9,6 +9,36 @@ export default function LoginPage() {
     function handleLogin() {
         alert(`Email: ${email}, Password:${password}`)
     }
+
+    useEffect(() => {
+        console.log("useEffect triggered")
+
+        // Regex for email validation
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+        if (emailRegex.test(email)) {
+            console.log("valid email")
+        }
+        else {
+            console.log("invalid email")
+        }
+
+        // Regex for password validation
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+        if (passwordRegex.test(password)){
+            console.log("valid password")
+        }
+        else{
+            console.log("invalid")
+        }
+
+            if (password.length < 8) {
+                console.log("password should be atleast 8 characters")
+            }
+            else {
+                console.log("password is valid")
+            }
+    }, [email, password])
+
     return (
         <React.Fragment>
             <div className="d-flex justify-content-center align-items-center" style={{ height: "100svh", backgroundColor: "#eee" }}>
